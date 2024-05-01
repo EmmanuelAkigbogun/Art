@@ -79,10 +79,10 @@ function WindowFx() {
               hovercolor.current
             ]
           );
-          target.current.push(target.current[0].getBBox().x - 2);
-          target.current.push(target.current[0].getBBox().y - 2);
-          target.current.push(target.current[0].getBBox().width + 4);
-          target.current.push(target.current[0].getBBox().height + 4);
+          target.current.push(target.current[0].getBBox().x);
+          target.current.push(target.current[0].getBBox().y);
+          target.current.push(target.current[0].getBBox().width);
+          target.current.push(target.current[0].getBBox().height);
           target.current.push(target.current[1] + target.current[3]);
           target.current.push(target.current[2] + target.current[4]);
           target.current.push(hovercolor.current);
