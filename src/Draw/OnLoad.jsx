@@ -29,7 +29,7 @@ import { promptfx } from "./Download";
             focusbool.current[1] = 0;
             focusbool.current[0] = false; 
       }
-      count.current = count.current++;
+      count.current = count.current+1;
       !edit.current && move(e, context, touchmove);
     });
     vg.current.addEventListener("touchend", (e) => {
