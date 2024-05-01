@@ -6,7 +6,7 @@ import WindowFx from "./Window";
 import Rect from "./Rect";
 export let Context = createContext();
 function Draw() {
-  let thick = useRef((window.innerHeight + window.innerHeight) / 600);
+  let thick = useRef((window.innerHeight + window.innerHeight) / 2000);
   let [render, setRender] = useState(0);
   let vgpathxy = useRef({});
   let vgcolor = useRef([]);
