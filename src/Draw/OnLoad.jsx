@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { touchmove, touchend, touchstart } from "./Functions/Function";
 import { start, move, end } from "./Functions/Touch";
 import { Context } from "./Draw"; 
@@ -17,6 +17,7 @@ import { promptfx } from "./Download";
   let setRender=context.setRender;
   let target=context.target
   let targetObject=context.targetObject
+  let count=useRef(0)
   useEffect(()=>{
     vg.current.addEventListener("touchstart", (e) => {
       focusbool.current[0] = true;
@@ -24,8 +25,11 @@ import { promptfx } from "./Download";
       !edit.current&&start(e, context,touchstart);
     });
     vg.current.addEventListener("touchmove", (e) => {
-      focusbool.current[1] = 0;
-      focusbool.current[0] = false;
+      if (count.current>=1) {
+            focusbool.current[1] = 0;
+            focusbool.current[0] = false; 
+      }
+      count.current = count.current++;
       !edit.current && move(e, context, touchmove);
     });
     vg.current.addEventListener("touchend", (e) => {
@@ -50,6 +54,7 @@ import { promptfx } from "./Download";
           targetObject.current = {};
           focusbool.current[1] = 0;
           focusbool.current[0] = false;
+          count.current = 0;
       }
       !edit.current && end(e, context, touchend);
     });
