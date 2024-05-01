@@ -24,8 +24,8 @@ import { promptfx } from "./Download";
       !edit.current&&start(e, context,touchstart);
     });
     vg.current.addEventListener("touchmove", (e) => {
-      focusbool.current[1] = 0;
-      focusbool.current[0] = false;
+      //focusbool.current[1] = 0;
+      //focusbool.current[0] = false;
       !edit.current && move(e, context, touchmove);
     });
     vg.current.addEventListener("touchend", (e) => {
