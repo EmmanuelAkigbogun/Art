@@ -10,7 +10,6 @@ export let start = (e, context,touchstart) => {
   let cheight = context.cheight;
   e.preventDefault();
   e.stopPropagation();
-  alert(e.targetTouches[0].force)
   touchstart(
     e,
     vgpathxy,
